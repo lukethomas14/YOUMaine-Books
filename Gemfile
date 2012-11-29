@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 gem 'turbolinks'
+gem 'simple_form'
+gem 'isbn_validation'
 
 
 # Gems used only for assets and not required
