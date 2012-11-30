@@ -1,10 +1,12 @@
-<div class="padding">
+<div class="container padding">
+	
 	<%= simple_form_for @book do |f| %>
-		<%= f.input :email %>
-		<%= f.input :isbn %>
+		<%= f.input :email, :label => "UMaine Email Address" %>
+		<%= f.input :course_number, :label => "Your Class Number", :placeholder => "ENG131" %>
+		<%= f.input :isbn, :label => "Book ISBN", :placeholder => "9 or 13 digit ISBN" %>
 		<%= f.input :price %>
 		<%= f.input :title %>
-		<%= f.button :submit %>
+		<%= f.button :submit, :class => "btn btn-primary" %>
 	<% end %>	
 </div>
 

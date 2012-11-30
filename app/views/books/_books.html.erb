@@ -4,6 +4,7 @@
 			<th>Title</th>
 			<th>Price</th>
 			<th>ISBN</th>
+			<th>Course Number</th>
 			<th>Seller Email</th>
 		</tr>
 	</thead>
@@ -13,7 +14,8 @@
 				<td><%= book.title %></td>
 				<td><%= number_to_currency(book.price) %></td>
 				<td><%= book.isbn %></td>
-				<td><%= mail_to book.email, book.email, :subject => "I want to purchase your Textbook", :encode => "javascript" %></td>
+				<td><%= book.course_number %></td>
+				<td><%= mail_to book.email, book.email, :subject => "I want to purchase the #{book.title} Textbook", :encode => "javascript" %></td>
 			</tr>
 		<% end %>
 	</tbody>			

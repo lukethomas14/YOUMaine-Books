@@ -1,17 +1,18 @@
 class Book < ActiveRecord::Base
-  attr_accessible :email, :isbn, :price, :title
+  attr_accessible :email, :isbn, :price, :title, :course_number
 
   validates :isbn, :presence => true
   validates :price, :presence => true
   validates :title, :presence => true
   validates :email, :presence => true
+  validates :course_number, :presence => true
 
   validates :isbn, :isbn_format => true
 
   def self.search(search)
 		if search
       q = "%#{search}"
-			where('isbn LIKE ? OR title LIKE ?', q, q).order("created_at DESC")
+			where('course_number LIKE ? OR isbn LIKE ?', q, q).order("created_at DESC")
 		else
 			all
 		end
