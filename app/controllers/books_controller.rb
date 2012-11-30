@@ -22,6 +22,13 @@ class BooksController < ApplicationController
 		else flash.now[:error] = "There was a problem with the info you supplied"
 		render 'books/new'
 		end
+	end
+
+	def destroy
+		@book = Book.find(params[:id])
+		@book.destroy
+
+		redirect_to books_url
 	end	
 end
 

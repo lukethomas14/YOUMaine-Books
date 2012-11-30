@@ -1,16 +1,1 @@
-<table>
-	<tr>
-		<td>Title</td>
-		<td>Price</td>
-		<td>ISBN</td>
-		<td>Email</td>
-	</tr>
-	<% @books.each do |book| %>
-	<tr>
-		<td><%= book.title %></td>
-		<td><%= number_to_currency(book.price) %></td>
-		<td><%= book.isbn %></td>
-		<td><%= mail_to book.email, book.email, :subject => "I want to purchase your Textbook", :encode => "javascript" %></td>
-	</tr>
-<% end %>
-</table>			
+<%= render :partial => "books" %>

@@ -1,0 +1,20 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Price</th>
+			<th>ISBN</th>
+			<th>Seller Email</th>
+		</tr>
+	</thead>
+	<tbody>	
+		<% @books.each do |book| %>
+			<tr>
+				<td><%= book.title %></td>
+				<td><%= number_to_currency(book.price) %></td>
+				<td><%= book.isbn %></td>
+				<td><%= mail_to book.email, book.email, :subject => "I want to purchase your Textbook", :encode => "javascript" %></td>
+			</tr>
+		<% end %>
+	</tbody>			
+</table>

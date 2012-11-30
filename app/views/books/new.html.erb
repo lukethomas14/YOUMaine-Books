@@ -1,7 +1,14 @@
-<%= simple_form_for @book do |f| %>
-	<%= f.input :email %>
-	<%= f.input :isbn %>
-	<%= f.input :price %>
-	<%= f.input :title %>
-	<%= f.button :submit %>
-<% end %>	
+<div class="padding">
+	<%= simple_form_for @book do |f| %>
+		<%= f.input :email %>
+		<%= f.input :isbn %>
+		<%= f.input :price %>
+		<%= f.input :title %>
+		<%= f.button :submit %>
+	<% end %>	
+</div>
+
+<% content_for :cta do %>
+	<h1>Post your Book Like a Boss</h1>
+	<h2>Just fill out the info below, no account required!</h2>
+<% end %>

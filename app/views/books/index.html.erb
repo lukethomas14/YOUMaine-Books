@@ -1,23 +1,19 @@
-<%= form_tag books_path, :method => 'get' do %>
-	<p>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search by ISBN", :name => nil %>
-	</p>
-<% end %>
+<div class="marketing">
+	<h1>Books for Sale</h1>
+	<p class="marketing-byline">
+		Interested in a book? Email the student to purchase. It's that easy!
+	</p>	
+</div>	
 
-<table>
-	<tr>
-		<td>Title</td>
-		<td>Price</td>
-		<td>ISBN</td>
-		<td>Email</td>
-	</tr>
-	<% @books.each do |book| %>
-	<tr>
-		<td><%= book.title %></td>
-		<td><%= number_to_currency(book.price) %></td>
-		<td><%= book.isbn %></td>
-		<td><%= mail_to book.email, book.email, :subject => "I want to purchase your Textbook", :encode => "javascript" %></td>
-	</tr>
+<%= render :partial => "books" %>
+
+<% content_for :cta do %>
+	<h1>Replace the UMaine Bookstore</h1>
+  <h2>Sell your books, without the bookstore</h2>
+  <%= form_tag books_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => 'main-search', :placeholder => "Book Title or ISBN #" %>
+      <%= submit_tag "Search Books", :name => nil, :class => 'btn btn-success' %>
+    </p>
+  <% end %>
 <% end %>
-</table>		
