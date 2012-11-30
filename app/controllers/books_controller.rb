@@ -4,6 +4,10 @@ class BooksController < ApplicationController
 		@books = Book.search(params[:search])
 	end
 
+	def show
+		@books = Book.all
+	end
+
 	def new
 		@book = Book.new
 	end
@@ -13,7 +17,7 @@ class BooksController < ApplicationController
 
 		if @book.save 
 			flash[:notice] = "Thanks! We'll be in touch soon."
-			redirect_to new_book_path
+			redirect_to @book
 
 		else flash.now[:error] = "There was a problem with the info you supplied"
 		render 'books/new'

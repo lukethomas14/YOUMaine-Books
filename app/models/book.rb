@@ -10,7 +10,8 @@ class Book < ActiveRecord::Base
 
   def self.search(search)
 		if search
-			where('isbn LIKE ?', "%#{search}")
+      q = "%#{search}"
+			where('isbn LIKE ? OR title LIKE ?', q, q).order("created_at DESC")
 		else
 			all
 		end
