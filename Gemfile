@@ -4,8 +4,10 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development do
+	gem 'sqlite3'
+end
 
-gem 'sqlite3'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'isbn_validation'
@@ -26,6 +28,10 @@ end
 
 gem 'jquery-rails'
 
+group :production do
+	gem 'postgres'
+end	
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -40,3 +46,4 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
