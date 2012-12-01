@@ -17,7 +17,7 @@ class BooksController < ApplicationController
 
 		if @book.save 
 			flash[:notice] = "Thanks! We'll be in touch soon."
-			redirect_to @book
+			redirect_to @book, notice: 'Book was successfully created.'
 
 		else flash.now[:error] = "There was a problem with the info you supplied"
 		render 'books/new'

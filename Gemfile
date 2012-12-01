@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'simple_form'
 gem 'isbn_validation'
 gem 'bootstrap-sass-rails'
+gem 'devise'
+gem 'rails_admin'
 
 
 # Gems used only for assets and not required
