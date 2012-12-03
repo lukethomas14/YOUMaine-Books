@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		@books = Book.all
+		@book = Book.find(params[:id])
 	end
 
 	def new
@@ -15,12 +15,11 @@ class BooksController < ApplicationController
 	def create 
 		@book = Book.new(params[:book])
 
-		if @book.save 
-			flash[:notice] = "Thanks! We'll be in touch soon."
+		if @book.save
 			redirect_to @book, notice: 'Book was successfully created.'
 
 		else flash.now[:error] = "There was a problem with the info you supplied"
-		render 'books/new'
+			render 'books/new'
 		end
 	end
 

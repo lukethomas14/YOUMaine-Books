@@ -1,1 +1,33 @@
-<%= render :partial => "books" %>
+<p id="notice"><%= notice %></p>
+
+<h1>Book</h1>
+
+<p>
+	<strong>Title</strong><br>
+	<%= @book.title %>
+</p>
+
+<p>
+	<strong>ISBN</strong><br>
+	<%= @book.isbn %>
+</p>
+
+<p>
+	<strong>Email</strong><br>
+	<%= @book.email %>
+</p>
+
+<p>
+	<strong>Price</strong><br>
+	<%= number_to_currency @book.price %>
+</p>
+
+<p>
+	<strong>Course Number</strong><br>
+	<%= @book.course_number %>
+</p>
+
+<div class="form-actions">
+	<%= link_to 'Back', books_path, :class => 'btn' %>
+	<%= link_to 'Delete Book', @book, :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>	

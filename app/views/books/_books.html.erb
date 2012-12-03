@@ -15,7 +15,7 @@
 				<td><%= number_to_currency(book.price) %></td>
 				<td><%= book.isbn %></td>
 				<td><%= book.course_number %></td>
-				<td><%= mail_to book.email, book.email, :subject => "I want to purchase the #{book.title} Textbook", :encode => "javascript" %></td>
+				<td><%= mail_to book.email, book.email, :subject => "I want to purchase #{book.title} Textbook", :encode => "javascript" %></td>
 			</tr>
 		<% end %>
 	</tbody>			
