@@ -1,13 +1,31 @@
 <div class="container padding">
-	
-	<%= simple_form_for @book do |f| %>
-		<%= f.input :email, :label => "UMaine Email Address" %>
-		<%= f.input :course_number, :label => "Your Class Number", :placeholder => "ENG131" %>
-		<%= f.input :isbn, :label => "Book ISBN", :placeholder => "9 or 13 digit ISBN" %>
-		<%= f.input :price %>
-		<%= f.input :title %>
-		<%= f.button :submit, :class => "btn btn-primary" %>
-	<% end %>	
+	<div class="span3 new-book">	
+		<%= simple_form_for @book do |f| %>
+			<%= f.input :email, :label => "UMaine Email Address" %>
+			<%= f.input :course_number, :label => "Your Class Number", :placeholder => "ENG131" %>
+			<%= f.input :isbn, :label => "Book ISBN", :placeholder => "9 or 13 digit ISBN" %>
+			<%= f.input :price %>
+			<%= f.input :title %>
+			<%= f.button :submit, :class => "btn btn-primary" %>
+		<% end %>	
+	</div>
+	<div class="span8 book-desc">
+		<h1>The Bookstore wants your $$$</h1>
+		<p>
+			Do you hate spending hundreds of dollars every semester on textbooks, and when it's time to sell them back, they will only give you <strong>$20 bucks?</strong>
+		</p>
+		<p>
+			Does your professor require that you purchase a "special edition" textbook that he/she wrote himself? It's really lame, but it happens all the time.
+		</p><br >
+		<h2>Sell your books to fellow UMaine Students</h2>
+		<p>
+			Stop spending all your time posting your books to lame Facebook groups that no one reads. Post your book here. It's easy, and there's no charge.....I promise 
+		</p>
+		<p>
+			No seriously, this cost me $10 bucks and some time to build. Just use it. 
+		</p>	
+
+	</div>	
 </div>
 
 <% content_for :cta do %>
