@@ -8,6 +8,7 @@ group :development do
 	gem 'sqlite3'
 end
 
+gem 'turbolinks'
 gem 'simple_form'
 gem 'isbn_validation'
 gem 'bootstrap-sass-rails'
