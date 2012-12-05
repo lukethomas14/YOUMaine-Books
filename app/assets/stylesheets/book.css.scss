@@ -40,6 +40,7 @@
 	width: 250px;
 	height: 60px;
 	margin-top: 7px;
+  text-transform: uppercase;
 }
 
 .marketing {
@@ -77,4 +78,9 @@ background-color: whiteSmoke;
 .book-desc {
   float: left;
   padding-left: 40px;
+}
+
+.fb-center {
+  margin: 0 auto;
+  width: 300px;
 }
