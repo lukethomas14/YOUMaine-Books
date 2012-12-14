@@ -1,13 +1,15 @@
 class Book < ActiveRecord::Base
-  attr_accessible :email, :isbn, :price, :title, :course_number
+  attr_accessible :email, :isbn, :price, :title, :course_number, :zip
 
   validates :isbn, :presence => true
   validates :price, :presence => true
   validates :title, :presence => true
   validates :email, :presence => true
+  validates :zip, :presence => true
   validates :course_number, :presence => true
   validates_length_of :course_number, :maximum => 6
   validates_uniqueness_of :title
+  validates_numericality_of :zip, :equal_to => 207
 
   validates :isbn, :isbn_format => true
 
