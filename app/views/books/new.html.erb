@@ -1,6 +1,6 @@
 <div class="container padding">
 	<div class="span3 new-book">	
-		<%= simple_form_for @book do |f| %>
+		<%= simple_form_for @book, :html => { :honeypot => true } do |f| %>
 			<%= f.input :email, :label => "UMaine Email Address" %>
 			<%= f.input :course_number, :label => "Your Class Number", :placeholder => "ENG131" %>
 			<%= f.input :isbn, :label => "Book ISBN", :placeholder => "9 or 13 digit ISBN" %>
