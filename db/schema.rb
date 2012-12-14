@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214011119) do
+ActiveRecord::Schema.define(:version => 20121213233921) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20121214011119) do
     t.datetime "updated_at",    :null => false
     t.string   "course_number"
     t.boolean  "approved"
-    t.string   "zip"
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -37,6 +36,15 @@ ActiveRecord::Schema.define(:version => 20121214011119) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
