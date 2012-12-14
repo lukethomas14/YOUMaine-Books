@@ -7,6 +7,7 @@ class Book < ActiveRecord::Base
   validates :email, :presence => true
   validates :course_number, :presence => true
   validates_length_of :course_number, :maximum => 6
+  validates_uniqueness_of :title
 
   validates :isbn, :isbn_format => true
 
