@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  apply_simple_captcha
+  
   attr_accessible :email, :isbn, :price, :title, :course_number
 
   validates :isbn, :presence => true

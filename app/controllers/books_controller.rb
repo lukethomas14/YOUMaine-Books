@@ -13,11 +13,9 @@ class BooksController < ApplicationController
 	end
 
 	def create 
-		@book = Book.new(params[:book])
-
-
-		if simple_captcha_valid?
-			@book.save
+		@book = Book.new(params[:book])	
+		
+		if @book.save
 			redirect_to @book, notice: 'Book was successfully created.'
 
 		else flash.now[:error] = "There was a problem with the info you supplied"

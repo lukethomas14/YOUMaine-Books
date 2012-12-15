@@ -33,7 +33,7 @@
 	    <%= f.label :title %>
 	    <%= f.text_field :title, :placeholder => "Book Title" %>
 	  </div>
-	  <%= show_simple_captcha %>
+	  <%= show_simple_captcha(:object=>"book") %>
 	  <div class="actions">
 	    <%= f.submit :class => "btn btn-primary" %>
 	  </div>
