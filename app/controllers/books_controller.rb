@@ -21,6 +21,10 @@ class BooksController < ApplicationController
 		else flash.now[:error] = "There was a problem with the info you supplied"
 			render 'books/new'
 		end
+
+		if @book.save && verify_recaptcha(:model => @book, :message => "Oh! It's error with reCAPTCHA!") #captcha is valid 
+			else #captcha is invalid 
+		end
 	end
 
 	def destroy
