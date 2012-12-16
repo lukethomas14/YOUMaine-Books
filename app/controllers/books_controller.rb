@@ -15,15 +15,11 @@ class BooksController < ApplicationController
 	def create 
 		@book = Book.new(params[:book])	
 		
-		if @book.save
+		if verify_recaptcha && @book.save
 			redirect_to @book, notice: 'Book was successfully created.'
 
 		else flash.now[:error] = "There was a problem with the info you supplied"
 			render 'books/new'
-		end
-
-		if @book.save && verify_recaptcha(:model => @book, :message => "Oh! It's error with reCAPTCHA!") #captcha is valid 
-			else #captcha is invalid 
 		end
 	end
 
