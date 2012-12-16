@@ -13,8 +13,8 @@ class Book < ActiveRecord::Base
 
   def self.search(search)
 		if search
-      q = "%#{search}".upcase
-			where('course_number LIKE ? OR isbn LIKE ?', q, q).order("created_at DESC")
+      q = "%#{search}"
+			where('course_number LIKE ? OR isbn LIKE ?', q.upcase, q.upcase).order("created_at DESC")
 		else
 			all
 		end
